@@ -1,11 +1,19 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, Environment, MeshTransmissionMaterial, ContactShadows } from "@react-three/drei";
 import { Suspense, useRef } from "react";
 
 function Crystal() {
   const meshRef = useRef<any>(null);
+  
+  // 1. GET SCREEN DIMENSIONS
+  // This hook gives us the width of the 3D viewport in "three.js units"
+  const { viewport } = useThree();
+  
+  // 2. DETECT MOBILE
+  // If viewport width is less than 5 units, we are on mobile/portrait
+  const isMobile = viewport.width < 5;
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
@@ -17,11 +25,14 @@ function Crystal() {
 
   return (
     <Float speed={2} rotationIntensity={1.5} floatIntensity={1.5}>
-      <mesh ref={meshRef} scale={2.5}>
+      {/* 3. DYNAMIC SCALING */}
+      {/* Scale is 1.3 on mobile, 2.5 on desktop */}
+      <mesh ref={meshRef} scale={isMobile ? 1.3 : 2.5}>
         <icosahedronGeometry args={[1, 0]} /> 
         <MeshTransmissionMaterial 
           backside
-          samples={4} 
+          // 4. LOWER QUALITY ON MOBILE FOR SPEED
+          samples={isMobile ? 2 : 4} 
           thickness={2} 
           chromaticAberration={0.5} 
           anisotropy={0.3} 
@@ -42,8 +53,14 @@ function Crystal() {
 
 export default function HeroScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 6], fov: 45 }} gl={{ alpha: true }}>
-      {/* Lighting */}
+    <Canvas 
+      camera={{ position: [0, 0, 6], fov: 45 }} 
+      gl={{ alpha: true, antialias: true }}
+      // 5. CRITICAL PERFORMANCE FIX
+      // Limit pixel ratio to max 1.5. This prevents mobile phones 
+      // from rendering at 3x resolution (which is slow).
+      dpr={[1, 1.5]} 
+    >
       <ambientLight intensity={1.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} color="#6366f1" />
       <pointLight position={[-10, -10, -10]} intensity={2} color="#ec4899" />

@@ -95,7 +95,7 @@ export default function Home() {
                   Hire Me <ArrowRight size={20} />
                 </a>
                 <a href="#work" className={`px-8 py-4 bg-transparent border rounded-full font-bold text-lg hover:bg-neutral-500/10 transition-colors backdrop-blur-sm ${isDark ? "border-white/20 text-white" : "border-black/20 text-black"}`}>
-                  {/* View Projects */}
+                  View Projects
                 </a>
               </div>
             </motion.div>

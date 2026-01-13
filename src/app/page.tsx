@@ -95,7 +95,7 @@ export default function Home() {
                   Hire Me <ArrowRight size={20} />
                 </a>
                 <a href="#work" className={`px-8 py-4 bg-transparent border rounded-full font-bold text-lg hover:bg-neutral-500/10 transition-colors backdrop-blur-sm ${isDark ? "border-white/20 text-white" : "border-black/20 text-black"}`}>
-                  View Projects
+                  {/* View Projects */}
                 </a>
               </div>
             </motion.div>
@@ -115,8 +115,8 @@ export default function Home() {
         <section className={`border-y ${isDark ? "border-white/5 bg-neutral-900/50" : "border-black/5 bg-white/50"} backdrop-blur-md`}>
           <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { label: "Years Experience", value: "3+" }, // Realistic for a student
-                { label: "Projects Built", value: "20+" },
+                { label: "Years Experience", value: "1+" }, // Realistic for a student
+                { label: "Projects Built", value: "5+" },
                 { label: "Tech Stack", value: "10+" },
                 { label: "Commitment", value: "100%" }
               ].map((stat, i) => (
@@ -146,6 +146,8 @@ export default function Home() {
                             { name: "JavaScript", icon: <FileCode size={24}/> },
                             { name: "HTML5", icon: <LayoutTemplate size={24}/> },
                             { name: "CSS3", icon: <Palette size={24}/> },
+                            
+                            
                             { name: "Graphic Design", icon: <Layers size={24}/> },
                         ].map((skill, i) => (
                             <div key={i} className="flex flex-col items-center gap-3 text-center group">
@@ -169,6 +171,9 @@ export default function Home() {
                             { name: "PHP", icon: <Code size={24}/> },
                             { name: "SQL", icon: <Database size={24}/> },
                             { name: "MongoDB", icon: <Server size={24}/> },
+                            { name: "Node.js", icon: <Palette size={24}/> },
+                            
+                            { name: "Express.js", icon: <Palette size={24}/> }
                         ].map((skill, i) => (
                             <div key={i} className="flex flex-col items-center gap-3 text-center group">
                                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all group-hover:scale-110 ${isDark ? "bg-white/5 group-hover:bg-purple-500" : "bg-black/5 group-hover:bg-purple-500 group-hover:text-white"}`}>
@@ -247,7 +252,7 @@ export default function Home() {
           <span className="text-xs font-bold uppercase mb-2 block tracking-wider text-white/90 drop-shadow-md">{item.cat}</span>
           <h3 className={`text-2xl font-bold text-white drop-shadow-md`}>{item.title}</h3>
           <p className="text-xs mt-3 font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
-            View Project &rarr;
+            {/* View Project &rarr; */}
           </p>
         </div>
     </div>
@@ -261,8 +266,8 @@ export default function Home() {
             <div className="space-y-12">
                 {[
                 { role: "Freelance Developer", company: "Remote", date: "Present" },
-                { role: "Open Source Contributor", company: "GitHub Community", date: "2023 - Present" },
-                { role: "Software Engineering Student", company: "University", date: "2022 - Present" },
+                { role: "Open Source Contributor", company: "GitHub Community", date: "2024 - Present" },
+                { role: "Software Engineering Student", company: "University", date: "2023 - Present" },
                 ].map((job, i) => (
                 <div key={i} className="flex gap-6 relative group">
                     {/* Timeline Line */}

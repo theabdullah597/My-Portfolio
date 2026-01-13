@@ -310,7 +310,7 @@ export default function Home() {
             <div className="flex justify-center gap-8 mb-8 text-neutral-500">
                 {/* GitHub */}
                 <a 
-                  href="https://github.com/YOUR_USERNAME_HERE" 
+                  href="https://github.com/theabdullah597" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
@@ -320,7 +320,7 @@ export default function Home() {
 
                 {/* LinkedIn */}
                 <a 
-                  href="https://linkedin.com/in/YOUR_USERNAME_HERE" 
+                  href="https://linkedin.com/in/abdullah-farid" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
@@ -329,14 +329,14 @@ export default function Home() {
                 </a>
 
                 {/* Twitter / X (Optional) */}
-                <a 
+                {/* <a 
                   href="https://twitter.com/YOUR_USERNAME_HERE" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Twitter Profile"
                 >
                   <Twitter className="hover:text-indigo-500 cursor-pointer transition transform hover:-translate-y-1"/>
-                </a>
+                </a> */}
             </div>
 
             <p className="text-neutral-600 text-sm">&copy; 2025 Abdullah. All Rights Reserved.</p>

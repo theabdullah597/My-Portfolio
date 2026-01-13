@@ -267,7 +267,7 @@ export default function Home() {
                 {[
                 { role: "Freelance Developer", company: "Remote", date: "Present" },
                 { role: "Open Source Contributor", company: "GitHub Community", date: "2024 - Present" },
-                { role: "Software Engineering Student", company: "University", date: "2023 - Present" },
+                { role: "Software Engineering Student", company: "Capital University of Science & Technology", date: "2023 - Present" },
                 ].map((job, i) => (
                 <div key={i} className="flex gap-6 relative group">
                     {/* Timeline Line */}
